@@ -1,1 +1,41 @@
-THIS SHOULD BE A LINTER ERROR
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Interface</title>
+    <link rel="stylesheet" href="interface_styles.css">
+</head>
+<body>
+    <!-- Menu Primário (Inicial) -->
+    <div id="menu-primary" class="primary-menu">
+        <div id="primary-icon" class="primary-icon">
+            <img src="dot/icons/botao_1.png" alt="Menu" draggable="false">
+        </div>
+    </div>
+
+    <!-- Menu Secundário -->
+    <div id="menu-secondary" class="secondary-menu hidden">
+        <div class="secondary-buttons">
+            <button class="secondary-btn" data-action="back">
+                <span class="btn-icon">←</span>
+                <span class="btn-text">VOLTAR</span>
+            </button>
+            <button class="secondary-btn" data-action="option1">
+                <span class="btn-icon">⚙</span>
+                <span class="btn-text">OPÇÃO 1</span>
+            </button>
+            <button class="secondary-btn" data-action="option2">
+                <span class="btn-icon">📊</span>
+                <span class="btn-text">OPÇÃO 2</span>
+            </button>
+            <button class="secondary-btn" data-action="option3">
+                <span class="btn-icon">🔧</span>
+                <span class="btn-text">OPÇÃO 3</span>
+            </button>
+        </div>
+    </div>
+
+    <script src="interface_script.js"></script>
+</body>
+</html>
