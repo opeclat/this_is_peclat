@@ -1,0 +1,178 @@
+/* Reset e configurações gerais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Times New Roman", "Georgia", serif;
+    height: 100vh;
+    overflow: hidden;
+    background: transparent;
+    user-select: none;
+}
+
+/* Classe para ocultar elementos */
+.hidden {
+    display: none !important;
+}
+
+/* MENU PRIMÁRIO (INICIAL) */
+.primary-menu {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    cursor: move;
+    transition: opacity 0.3s ease;
+}
+
+.primary-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    opacity: 0.85;
+    background: rgba(255, 255, 255, 0.12);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.primary-icon img {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.primary-icon:hover {
+    cursor: move;
+}
+
+/* MENU SECUNDÁRIO */
+.secondary-menu {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    z-index: 1001;
+    display: flex;
+    align-items: center;
+}
+
+.secondary-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 0;
+}
+
+/* Botões do menu secundário */
+.secondary-btn {
+    width: 48px;
+    height: 48px;
+    background: rgba(40, 40, 40, 0.85);
+    border: none;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-family: "Times New Roman", "Georgia", serif;
+    text-transform: uppercase;
+    font-weight: normal;
+    overflow: hidden;
+}
+
+/* Ícones dos botões */
+.btn-icon {
+    font-size: 18px;
+    transition: opacity 0.3s ease;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+/* Texto dos botões (oculto por padrão) */
+.btn-text {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    font-size: 12px;
+    letter-spacing: 1px;
+    white-space: nowrap;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+}
+
+/* Estado hover dos botões */
+.secondary-btn:hover {
+    width: 160px;
+    background: rgba(20, 20, 20, 0.95);
+}
+
+.secondary-btn:hover .btn-icon {
+    opacity: 0;
+}
+
+.secondary-btn:hover .btn-text {
+    opacity: 1;
+}
+
+/* Animações de transição entre menus */
+.fade-out {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.fade-in {
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+/* Estilos específicos para arrastar */
+.dragging {
+    cursor: move !important;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    .primary-icon {
+        width: 56px;
+        height: 56px;
+    }
+    
+    .primary-icon img {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .secondary-btn {
+        width: 44px;
+        height: 44px;
+    }
+    
+    .secondary-btn:hover {
+        width: 140px;
+    }
+    
+    .btn-text {
+        font-size: 11px;
+    }
+}
+
+/* Garantir que elementos não sejam selecionáveis durante arrasto */
+.no-select {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
